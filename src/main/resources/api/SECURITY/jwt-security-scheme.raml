@@ -1,0 +1,10 @@
+#%RAML 1.0 SecurityScheme
+description: JSON Web Token (JWT) for authentication
+type: x-jwt
+describedBy:
+  headers:
+    Authorization:
+      description: Used to send a valid JWT token
+      type: string
+      required: true
+      example: Bearer {jwt_token}

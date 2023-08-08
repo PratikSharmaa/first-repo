@@ -1,0 +1,35 @@
+#%RAML 1.0
+title: Time API
+# version: v1 
+# baseUri: http://api.example.com
+# mediaType: [application/json, application/xml]
+# protocols: [HTTP,HTTPS]
+
+traits:
+  queryParam-timeZone: !include /TRAITS/query-parameter-trait.raml
+  client-credentials: !include /exchange_modules/ebfd1f63-afd1-4115-88e3-f5e9fe229d75/client-credentials/1.0.0/client-credentials.raml
+  correlationId: !include /exchange_modules/ebfd1f63-afd1-4115-88e3-f5e9fe229d75/correlation-id-trait/1.0.0/correlation-id-trait.raml
+
+
+securitySchemes:
+  basic: !include /SECURITY/basic-authentication-security-scheme.raml
+  jwt: !include /SECURITY/jwt-security-scheme.raml
+
+
+uses:
+  error-dataType: /LIBRARY/error-datatype-library.raml
+
+/time:
+  description: To get the current time.
+
+  get:
+    description: Retrieve a list of all users
+    is: [correlationId, client-credentials, queryParam-timeZone]
+    securedBy: [basic, jwt]
+    responses:
+      200:
+        body:
+          application/json:
+            type: error-dataType.200
+            example: !include /EXAMPLES/Error-Examples/200.json
+            
