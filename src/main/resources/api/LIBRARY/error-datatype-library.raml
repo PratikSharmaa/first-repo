@@ -1,0 +1,117 @@
+#%RAML 1.0 Library
+usage: This Library is used to keep all the error related information.
+types:
+  200:
+    type: object
+    properties:
+      code:
+        description: HTTP response status code
+        type: integer | string
+        example: 200
+      message:
+        description: HTTP response message
+        type: string
+        example: "Good/Ok request"
+      description:
+        description: description of response
+        type: string
+        example: "Success"
+      datetime:
+        description: date time of event happend
+        type: string
+        example: "2019-11-06T09:54:00Z"
+      transactionID:
+        description: transaction id over response
+        type: string
+        example: "44b32520-61ee-47b4-907d-fa15869f3c4d"	
+  201:
+    type: object
+    properties:
+      code:
+        description: HTTP response status code
+        type: integer | string
+        example: 201
+      message:
+        description: HTTP response message
+        type: string
+        example: "Created"
+      description:
+        description: description of response
+        type: string
+        example: "Employee created in HR system"
+      datetime:
+        description: date time of event happend
+        type: string
+        example: "2019-11-06T09:54:00Z"
+      transactionID:
+        description: transaction id over response
+        type: string
+        example: "44b32520-61ee-47b4-907d-fa15869f3c4d"
+  400:
+    type: object
+    properties:
+      code:
+        description: HTTP response status code
+        type: integer | string
+        example: 400
+      message:
+        description: HTTP response message
+        type: string
+        example: "Bad Request"
+      description:
+        description: description of response
+        type: string
+        example: "The requested payload doesn't comply with API specification"
+      datetime:
+        description: date time of event happend
+        type: string
+        example: "2019-11-06T09:54:00Z"
+      transactionID:
+        description: transaction id over response
+        type: string
+        example: "44b32520-61ee-47b4-907d-fa15869f3c4d"
+  404:
+    type: object
+    properties:
+      code:
+        description: HTTP response status code
+        type: integer | string
+        example: 404
+      message:
+        description: HTTP response message
+        type: string
+        example: "Not found"
+      description:
+        description: description of response
+        type: string
+        example: "Not found"
+      datetime:
+        description: date time of event happend
+        type: string
+        example: "2019-11-06T09:54:00Z"
+      transactionID:
+        description: transaction id over response
+        type: string
+        example: "44b32520-61ee-47b4-907d-fa15869f3c4d"
+  500:
+    type: object
+    properties:
+      code:
+        description: HTTP response status code
+        type: integer | string
+        example: 500
+      message:
+        description: HTTP response message
+        type: string
+        example: "Internal Server Error"
+      description:
+        description: description of response
+        type: string
+        example: "The server encountered un expected error, please reach out support team"
+      datetime:
+        description: date time of event happend
+        type: string
+        example: "2019-11-06T09:54:00Z"
+      transactionID:
+        description: transaction id over response
+        type: string
